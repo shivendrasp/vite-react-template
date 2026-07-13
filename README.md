@@ -1,1 +1,0 @@
--- Minimal Vite + React(JSX) template --

@@ -1,0 +1,21 @@
+.block {
+  width: 120px;
+  height: 120px;
+  background: oklab(0.47 -0.01 -0.3 / 0.27);
+  border: 1px solid oklab(0.53 0.01 -0.26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: tick 1s ease-in-out infinite alternate;
+}
+
+@keyframes tick {
+  0% {
+    width: 30px;
+    height: 48px;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+  }
+}

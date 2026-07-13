@@ -1,0 +1,163 @@
+.container {
+  perspective: 2000px;
+  position: relative;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(16px);
+  }
+  to {
+    transform: rotate(360deg) translateX(16px);
+  }
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.steps {
+  width: 500px;
+  background-color: #f7f7f7;
+  border-radius: 42px;
+  padding: 25px 25px;
+  margin: 100px auto;
+  border: 1px solid #ffffff41;
+  box-shadow: inset 0 -4px 4px 0 #e8e8e8;
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.numbers > div {
+  height: 40px;
+  aspect-ratio: 1;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.numbers > div.active {
+  background-color: #ff3be2;
+  box-shadow:
+    inset 0 0 12px 0 #ffffff,
+    0 0 12px 0 #ffaef3;
+  color: #fff;
+  border: 1px solid #ffffff9a;
+  animation: scale 0.15s ease-in-out;
+}
+
+.numbers > div > div {
+  height: 24px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px;
+  animation: orbit 4s linear infinite;
+  filter: blur(8px);
+  opacity: 0;
+}
+
+.numbers > div.active > div {
+  opacity: 1;
+}
+
+.message {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 100%;
+  margin-bottom: 42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.message > p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  margin-top: 42px;
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border: none;
+  cursor: default;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: inset 0 0 16px 0 #d2d4ff;
+}
+
+.buttons button span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  border-radius: 100%;
+  background: white;
+  cursor: default;
+  font-size: 42px;
+  padding: 8px;
+  color: inherit;
+  animation: close 0.2s ease-out;
+}
+
+.close:hover {
+  color: #fff;
+  background: #c1c4ff;
+  box-shadow:
+    inset 0 0 12px 0 #ffffff,
+    0 0 12px 0 #c1c4ff;
+}
+
+@keyframes close {
+  from {
+    scale: 0;
+  }
+  to {
+    scale: 1;
+  }
+}

@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+:root {
+  --color-primary: #292929;
+  --color-primary-light: #F6F6F6;
+  --color-header-non-accessible: #474747;
+  --color-btn-bg-hover: #000;
+}
+
+.container {
+  width: 100%;
+  max-width: 100rem;
+  min-height: 100vh;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 400;
+  border-bottom: 1.6rem solid var(--color-primary);
+  padding: 2rem 3rem;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* *************** */
+
+.header {
+  align-self: stretch;
+  cursor: default;
+  padding-bottom: 1rem;
+  border-bottom: 1rem solid var(--color-primary);
+}
+
+.header h1 {
+  color: var(--color-primary);
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.header h1::before,
+.header h1::after {
+  display: block;
+  content: "";
+  height: 3px;
+  width: 4rem;
+  background-color: var(--color-primary);
+  position: absolute;
+  top: calc(50% - 1px);
+}
+
+.header h1::before {
+  left: 0;
+}
+
+.header h1::after {
+  right: 0;
+}
+
+/* *************** */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 50rem;
+}
+
+.menu > h2 {
+  display: inline-block;
+  border-top: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.menu > p {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+.pizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.pizza {
+  display: flex;
+  gap: 1rem;
+}
+
+.pizza div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.pizza img {
+  max-width: 14rem;
+  aspect-ratio: 1;
+  align-self: start;
+  border-radius: 12px;
+  transition: all 60ms ease-in-out;
+}
+
+.pizza span {
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+  display: block;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  padding: 4px 8px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.pizza h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.pizza > div > div p {
+  font-size: 1rem;
+  font-weight: 100;
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+.pizza > div > p {
+  font-weight: 800;
+}
+
+.pizza.soldout {
+  color: var(--color-header-non-accessible);
+  opacity: 0.5;
+}
+
+.pizza.soldout img {
+  filter: grayscale();
+  border-color: var(--color-header-non-accessible);
+}
+
+/* *************** */
+
+.footer {
+  align-self: stretch;
+  font-size: 1rem;
+  border-top: 1rem solid var(--color-primary);
+  padding-top: 2rem;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.open {
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+.close {
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.btn {
+  color: var(--color-primary-light);
+  font-family: inherit;
+  border: none;
+  border-radius: 42px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--color-btn-bg-hover);
+  color: var(--color-header-non-accessible);
+}
+
+@media (max-width: 800px) {
+  .pizzas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
+*/

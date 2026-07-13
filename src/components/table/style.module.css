@@ -1,0 +1,25 @@
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+  animation: table 2s infinite linear;
+}
+
+@keyframes table {
+  0% {
+    transform: rotateY(45deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(45deg) rotateX(360deg);
+  }
+}
+
+
+.table td {
+  width: 40px;
+  height: 10px;
+  background: #ccd2ff;
+  border: 0px solid blue;
+  text-align: center;
+}

@@ -1,11 +1,11 @@
-import Test from './components/test';
+import Lev from "./components/lev"
 
 const App = () => {
   return (
     <div className="app">
-      <Test />
+      <Lev />
     </div>
-  )
-}
+  );
+};
 
 export default App;
