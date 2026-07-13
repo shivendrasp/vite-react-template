@@ -16,7 +16,7 @@ const GradientBox = () => {
 
 const Chip = () => {
   return (
-    <div className="size-10 bg-[blue]"></div>
+    <div className="size-10 bg-[white]"></div>
   )
 }
 
