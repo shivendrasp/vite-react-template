@@ -1,9 +1,9 @@
-import Lev from "./components/break"
+import Zed from "./components/zed-test"
 
 const App = () => {
   return (
     <div className="app">
-      <Lev />
+      <Zed />
     </div>
   );
 };
